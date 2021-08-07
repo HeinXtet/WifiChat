@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <import type="com.deevvdd.wifichat.data.socket.Utils" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_gradient">
+
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="57dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="0dp"
+            android:background="@color/colorPrimaryDark"
+            android:theme="@style/ToolbarTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:title="Room Info" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.2" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/hGuildLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+
+        <TextView
+            android:id="@+id/textIpTitle"
+            style="@style/Theme.WifiChat.Header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding_normal"
+            android:text="@string/text_ip_address"
+            app:layout_constraintEnd_toStartOf="@id/hGuildLine"
+            app:layout_constraintTop_toBottomOf="@id/guideline"
+            tools:text="IP ADDRESS" />
+
+        <TextView
+            android:id="@+id/textIp"
+            style="@style/Theme.WifiChat.Header"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:padding="@dimen/padding_normal"
+            android:text="@{Utils.INSTANCE.getIPAddress(true)}"
+            app:layout_constraintStart_toEndOf="@id/hGuildLine"
+            app:layout_constraintTop_toBottomOf="@id/guideline"
+            tools:text="12.2.2.2.2" />
+
+
+        <TextView
+            android:id="@+id/textPortTitle"
+            style="@style/Theme.WifiChat.Header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding_normal"
+            android:text="@string/text_port_number"
+            app:layout_constraintEnd_toStartOf="@id/hGuildLine"
+            app:layout_constraintTop_toBottomOf="@id/textIp" />
+
+        <TextView
+            android:id="@+id/textPort"
+            style="@style/Theme.WifiChat.Header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding_normal"
+            app:intToString="@{Utils.INSTANCE.DEFAULT_PORT_NUMBER}"
+            app:layout_constraintStart_toEndOf="@id/hGuildLine"
+            app:layout_constraintTop_toBottomOf="@id/textIp"
+            tools:text="1234" />
+
+        <ImageView
+            android:id="@+id/ivQrIpAddress"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/spacing_normal"
+            android:background="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textPort"
+            app:layout_constraintWidth_percent="0.8" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            style="@style/Theme.WifiChat.Body"
+            android:layout_marginVertical="@dimen/spacing_big"
+            android:text="@string/text_scan_description"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivQrIpAddress" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.deevvdd.wifichat.ui.main.MainViewModel" />
+
+        <import type="android.content.Context" />
+
+        <import type="android.view.View" />
+
+        <import type="com.deevvdd.wifichat.utils.NetworkUtils" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_gradient"
+        android:paddingHorizontal="@dimen/padding_big2"
+        tools:context=".ui.main.MainActivity">
+
+
+        <TextView
+            android:id="@+id/tvDescriptionOfApp"
+            style="@style/Theme.WifiChat.Body"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="@dimen/padding_normal"
+            android:text="@string/name_info"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@id/ivUserName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <ImageView
+            android:id="@+id/ivUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_user"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.35" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/nameInput"
+            android:layout_width="0dp"
+            android:layout_height="51dp"
+            android:layout_margin="@dimen/spacing_normal"
+            android:backgroundTint="#fff"
+            android:fontFamily="@font/cousine_regular"
+            android:hint="@string/user_name"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="@={vm.userName}"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/ivUserName"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.33" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnServerCreate"
+            style="@style/Theme.WifiChat.Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/spacing_normal"
+            android:enabled="@{vm.isValidToStart()}"
+            android:onClick="@{view-> vm.onCreateNewServer() }"
+            android:text="@string/text_new_server"
+            app:layout_constraintBottom_toTopOf="@+id/btnJoinServer" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnJoinServer"
+            style="@style/Theme.WifiChat.Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/spacing_normal"
+            android:enabled="@{vm.isValidToStart()}"
+            android:onClick="@{view-> vm.joinServer() }"
+            android:text="@string/text_join_server"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

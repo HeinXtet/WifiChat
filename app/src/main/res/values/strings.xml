@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">WifiChat</string>
+    <string name="text_join_server">Join Server</string>
+    <string name="text_new_server">New Server</string>
+    <string name="user_name">User name</string>
+    <string name="name_info">Enter your name to create server or start join to access chat room.</string>
+    <string name="loream">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        Lorem Ipsum has been the industrys standard dummy text ever since the 1500s,
+        when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+    </string>
+    <string name="text_send">Send</string>
+    <string name="info">Info</string>
+    <string name="text_ip_address">IP ADDRESS</string>
+    <string name="text_port_number">PORT NUMBER</string>
+    <string name="text_explain_to_forward_setting">You need to allow necessary permissions in Settings manually</string>
+    <string name="btn_text_ok">OK</string>
+    <string name="btn_text_cancel">Cancel</string>
+    <string name="text_explain_to_required_permission">Camera permission need to scan the IP QR code.</string>
+    <string name="text_scan">Scan QR Code</string>
+    <string name="text_ip_address_hint">ip address</string>
+    <string name="text_scan_description">To scan the IP address</string>
+    <string name="channel_name">Wifi Chat Chanel</string>
+    <string name="notification_channel_description">Wifi chat is can able to chat over the same wifi.</string>
+</resources>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#7C4DFF</color>
+    <color name="colorPurpleLight">#56499b</color>
+    <color name="colorPurpleDark">#3a3170</color>
+    <color name="colorTextBlack">#333333</color>
+    <color name="colorTextHint">#e1e1e1</color>
+    <color name="colorTextInfo">#9b9b9b</color>
+    <color name="colorGreen">#A5DE40</color>
+    <color name="navColor">#80FFFFFF</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="whiteSmoke">#f1f1f1</color>
+    <color name="black">#000000</color>
+    <color name="colorButtonDisabled">#9b9b9b</color>
+    <color name="colorButtonActive">#BC0000</color>
+
+</resources>

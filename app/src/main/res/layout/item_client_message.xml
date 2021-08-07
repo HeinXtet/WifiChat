@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="message"
+            type="com.deevvdd.wifichat.domain.model.Message" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_normal">
+
+
+        <TextView
+            android:id="@+id/tvUserName"
+            style="@style/Theme.WifiChat.Header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{message.senderName}"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="User Name" />
+
+        <TextView
+            android:id="@+id/tvMessage"
+            style="@style/Theme.WifiChat.Body"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:background="@drawable/incoming_bubble"
+            android:gravity="center_vertical"
+            android:lineSpacingExtra="2dp"
+            android:paddingStart="@dimen/padding_big"
+            android:paddingTop="@dimen/padding_tiny"
+            android:paddingEnd="@dimen/padding_big"
+            android:paddingBottom="@dimen/padding_small"
+            android:text="@{message.message}"
+            android:textColor="@color/black"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvUserName"
+            app:layout_constraintWidth_max="wrap"
+            app:layout_constraintWidth_percent="0.6"
+            tools:text="message" />
+
+
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_small"
+            android:fontFamily="@font/cousine_regular"
+            android:textColor="@color/colorTextInfo"
+            app:layout_constraintBottom_toBottomOf="@id/tvMessage"
+            app:layout_constraintStart_toEndOf="@+id/tvMessage"
+            app:readableDate="@{message.date}"
+            tools:text="date" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
